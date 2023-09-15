@@ -19,5 +19,9 @@ __Details about Our Improvement__
 4. Use Llama to replace GPT 3.5
 5. Improve his memory stream to make it more plausible and faster.
 
+## 3. What is our workflow?
+stage1: reference the generative agent code and create a little map with 3 agents and simulate one hour interaction.
+stage2: make improvement on this code to create a maslow agent.
+
 ## 2. What is our architecture?
 (remain to complete)
