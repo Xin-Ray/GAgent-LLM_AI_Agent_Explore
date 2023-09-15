@@ -10,7 +10,7 @@ To make AI more human-like, we should design intricate feedback systems allowing
 
 
 ## Improvement direction details: 
-1. Additional vital information(like health bar if this agent don’t eat, it will decrease)/n
-2. Add return system(after having interaction with the environment return the health bar an number)/n
-3. Additional tasks(Honggang: like give the agent a task of losing weight, and he can then go to gym or do exercise or eat less to lose weight. Xin: these task is focusing on the living related hormone and we can apply it to our agent as first priority, but we can also give them two goals to test if it works. If we give human a wrong order and what this agent will do, if we give a right order what is the difference)/n
+1. Additional vital information(like health bar if this agent don’t eat, it will decrease)
+2. Add return system(after having interaction with the environment return the health bar an number)
+3. Additional tasks(Honggang: like give the agent a task of losing weight, and he can then go to gym or do exercise or eat less to lose weight. Xin: these task is focusing on the living related hormone and we can apply it to our agent as first priority, but we can also give them two goals to test if it works. If we give human a wrong order and what this agent will do, if we give a right order what is the difference)
 4. Use Llama to replace GPT 3.5
