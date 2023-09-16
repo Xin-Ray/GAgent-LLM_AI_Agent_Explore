@@ -12,17 +12,25 @@ __Reference__
 Generative Agent link: [Visit Generative Agent](https://github.com/joonspk-research/generative_agents)
 An unverified architecture:[Visit architecture](https://lucid.app/lucidchart/bf6cbf8b-d9b2-4a6a-aab2-e890ffbff2bb/edit?page=0_0&invitationId=inv_7e0bd761-3923-4e94-9e14-7dd139e62073#)
 
-__Details about Our Improvement__
+__Details about Our Improvement__(remain to modified and select priority)
 1. Additional vital information(like health bar if this agent don’t eat, it will decrease)
 2. Add return system(after having interaction with the environment return the health bar an number)
 3. Additional tasks(Honggang: like give the agent a task of losing weight, and he can then go to gym or do exercise or eat less to lose weight. Xin: these task is focusing on the living related hormone and we can apply it to our agent as first priority, but we can also give them two goals to test if it works. If we give human a wrong order and what this agent will do, if we give a right order what is the difference)
 4. Use Llama to replace GPT 3.5
 5. Improve his memory stream to make it more plausible and faster.
+6. Improve his environment and interaction to make it more readable.
+7. Improve user agent.
+8. Allow user use voice interact with agent. 
 
 ## 3. What is our workflow?
 stage1: reference the generative agent code and create a little map with 3 agents and simulate one hour interaction.
 
 stage2: make improvement on this code to create a maslow agent.
+
+## 3. What is our timeline and responsible task for each member?
+current timeline: [Visit timeline]([https://github.com/joonspk-research/generative_agents](https://docs.google.com/spreadsheets/d/1qUgvuGqtwvqtMVxZ4gsxogLP5T-OOBi02dHr7cwioWo/edit#gid=0)https://docs.google.com/spreadsheets/d/1qUgvuGqtwvqtMVxZ4gsxogLP5T-OOBi02dHr7cwioWo/edit#gid=0)
+
+(remain to complete)
 
 ## 2. What is our architecture?
 (remain to complete)
