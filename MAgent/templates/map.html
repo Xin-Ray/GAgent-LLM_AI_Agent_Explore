@@ -1,10 +1,11 @@
-<script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+{% load static %}
 
-<script>
-    var config = {
+<script type="text/javascript">
+    //<script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js">
+    const config = {
         type: Phaser.AUTO,
-        width: 34,
-        height: 25,
+        width: 1088,
+        height: 800,
         scene: {
             preload: preload,
             create: create,
@@ -12,27 +13,62 @@
         }
     };
 
-    var game = new Phaser.Game(config);
+    const game = new Phaser.Game(config);
 
     function preload() {
     // load tileset image png file
-    this.load.image('CutRPG_Field_B', '{% static "game assets/Cute RPG - Fields/RPG Maker/RPG Maker VX/tilesets/CuteRPG_Field_B.png" %}');
-    this.load.image('CutRPG_Field_Tiles', '{% static "GAgent/MAgent/static/game assets/Cute RPG - Fields/48x48/CuteRPG_Field_Tiles.png" %}');
+    this.load.image('CutRPG_Field_B', '{% static "game_assets/map/CuteRPG_Field_B.png" %}');
+    this.load.image('CutRPG_Field_Tiles', '{% static "game_assets/map/CuteRPG_Field_Tiles.png" %}');
 
-    this.load.image('CutRPG_Interior_B', '{% static "GAgent/MAgent/static/game assets/Cute RPG World - RPG Maker MZ 16x16/tilesets/CuteRPG_Interior_B.png" %}');
-    this.load.image('CutRPG_Interior_C', '{% static "GAgent/MAgent/static/game assets/Cute RPG World - RPG Maker MZ 16x16/tilesets/CuteRPG_Interior_C.png" %}');
-    this.load.image('CutRPG_Village', '{% static "GAgent/MAgent/static/game assets/Cute RPG - Village/32x32/CuteRPG_Village_Inn.png" %}');
-    this.load.image('CutRPG_Village_House', '{% static "GAgent/MAgent/static/game assets/Cute RPG - Village/32x32/CuteRPG_Village_House.png" %}');
-    this.load.image('CutRPG_Village_Inn', '{% static "GAgent/MAgent/static/game assets/Cute RPG - Village/48x48/CuteRPG_Village_Inn.png" %}');
+    this.load.image('CutRPG_Interior_B', '{% static "game assets/Cute RPG World - RPG Maker MZ 16x16/tilesets/CuteRPG_Interior_B.png" %}');
+    this.load.image('CutRPG_Interior_C', '{% static "game assets/Cute RPG World - RPG Maker MZ 16x16/tilesets/CuteRPG_Interior_C.png" %}');
+    this.load.image('CutRPG_Village', '{% static "game assets/Cute RPG - Village/32x32/CuteRPG_Village_Inn.png" %}');
+    this.load.image('CutRPG_Village_House', '{% static "game assets/Cute RPG - Village/32x32/CuteRPG_Village_House.png" %}');
+    this.load.image('CutRPG_Village_Inn', '{% static "game assets/Cute RPG - Village/48x48/CuteRPG_Village_Inn.png" %}');
 
     // load tilemap json file
     this.load.tilemapTiledJSON('my_map', '{% static "game_assets/Map.json" %}');
     
     }
 
+    // ---------------function----------------
+
     function create() {
-    // create tilemap
+
+    // 3.create tilemap
     const map = this.make.tilemap({ key: 'my_map' });
+
+    // 4.create tileset image
+    const tileset1 = map.addTilesetImage('CuteRPG_Field_B', 'CuteRPG_Field_B');
+    const tileset2 = map.addTilesetImage('CuteRPG_Field_Tiles', 'CuteRPG_Field_Tiles');
+    const tileset3 = map.addTilesetImage('CuteRPG_Interior_B', 'CuteRPG_Interior_B');
+    const tileset4 = map.addTilesetImage('CuteRPG_Interior_C', 'CuteRPG_Interior_C');
+    const tileset5 = map.addTilesetImage('CuteRPG_Village', 'CuteRPG_Village');
+    const tileset6 = map.addTilesetImage('CuteRPG_Village_House', 'CuteRPG_Village_House');
+    const tileset7 = map.addTilesetImage('CuteRPG_Village_Inn', 'CuteRPG_Village_Inn');
+
+    // 5 create tileset group
+    let tileset_group_1 = [tileset1, tileset2, tileset3, tileset4, tileset5, tileset6, tileset7];
+
+    // 6.create tilemap layer using above tileset
+    // 6.0 create layer
+    overhead_billboardLayer = map.createLayer('overhead_billboard', tileset_group_1, 0, 0);
+    overhead_treeLayer = map.createLayer('overhead_tree', tileset_group_1, 0, 0);
+    background_houseLayer = map.createLayer('background_house', tileset_group_1, 0, 0);
+    background_grassLayer = map.createLayer('background_grass', tileset_group_1, 0, 0);
+    backgroundLayer = map.createLayer('background', tileset_group_1, 0, 0);
+
+    // 6.1 set depth layer
+    overhead_billboardLayer.setDepth(2);
+    overhead_treeLayer.setDepth(2);
+
+    // 6.2 set collision layer
+    collisionLayer = map.createLayer('collision', tileset_group_1, 0, 0);
+
+    collisionLayer.setCollisionByProperty({ collide: true });
+
+    collisionsLayer.setDepth(-1);
+
     }
 
     function update() {
