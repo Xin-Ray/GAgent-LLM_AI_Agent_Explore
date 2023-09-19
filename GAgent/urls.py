@@ -20,3 +20,4 @@ from MAgent import views
 urlpatterns = [
     path('game/', views.game_view, name='game_view'),
 ]
+#hellos
