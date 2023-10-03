@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from MAgent import views
+from django.urls import path, include
 
 urlpatterns = [
-    path('game/', views.game_view, name='game_view'),
+    path('MAgent/', include("MAgent.urls")),
+    path('admin/', admin.site.urls),
 ]
-#hellos
